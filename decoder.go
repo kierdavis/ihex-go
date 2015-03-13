@@ -1,15 +1,15 @@
 package ihex
 
 import (
-	"bufio"
+    "bufio"
     "fmt"
-	"io"
+    "io"
     "strings"
 )
 
 // Parses IHEX files.
 type Decoder struct {
-	scanner *bufio.Scanner
+    scanner *bufio.Scanner
     rec Record
     err error
     lineno int
@@ -17,11 +17,11 @@ type Decoder struct {
 
 // Create a new Decoder using input from the given io.Reader.
 func NewDecoder(r io.Reader) (d *Decoder) {
-	scanner := bufio.NewScanner(r)
-	return &Decoder{
-		scanner: scanner,
+    scanner := bufio.NewScanner(r)
+    return &Decoder{
+        scanner: scanner,
         lineno: 0,
-	}
+    }
 }
 
 // Read and decode one record from the source, returning true if the record was
