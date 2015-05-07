@@ -76,5 +76,5 @@ func (rec Record) Encode() (bytes []byte) {
 // Encode the record to the hexadecimal form of an IHEX record, with the leading
 // start token (colon).
 func (rec Record) EncodeHex() (hexStr string) {
-    return hex.EncodeToString(rec.Encode())
+    return ":" + hex.EncodeToString(rec.Encode())
 }
